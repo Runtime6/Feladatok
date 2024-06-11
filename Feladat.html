@@ -1,1 +1,99 @@
-ndn
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style0604.css">
+    <title>DOM</title>
+</head>
+<body>
+
+<div class="szamlal">
+    <h2>Számláló</h2>
+    <div id="szamol">0</div>
+    <div class="szgomb">
+        <button onclick="csök()">-</button>
+        <button onclick="növ()">+</button>
+    </div>
+</div>
+
+<hr>
+
+<div class="table-container">
+    <h2>Táblázat</h2>
+    <table id="tablazat">
+        <tr>
+            <td id="egy" onclick="cella(this)"></td>
+            <td id="ketto" onclick="cella(this)"></td>
+            <td id="harom" onclick="cella(this)"></td>
+        </tr>
+        <tr>
+            <td id="negy" onclick="cella(this)"></td>
+            <td id="ot" onclick="cella(this)"></td>
+            <td id="hat" onclick="cella(this)"></td>
+        </tr>
+        <tr>
+            <td id="het" onclick="cella(this)"></td>
+            <td id="nyolc" onclick="cella(this)"></td>
+            <td id="kilenc" onclick="cella(this)"></td>
+        </tr>
+    </table>
+    <button onclick="resetTable()">Újra</button>
+</div>
+
+<hr>
+
+<div class="lista">
+    <h2>Bevásárló Lista</h2>
+    <input type="text" id="adat" placeholder="Adj meg egy elemet" />
+    <button onclick="katt()">Hozzáad</button>
+    <ul id="bevlist"></ul>
+</div>
+
+<script>
+    
+    let szamol = 0;
+    const adatok = document.getElementById('szamol');
+
+    function növ() {
+        szamol++;
+        adatok.textContent = szamol;
+    }
+
+    function csök() {
+        szamol--;
+        adatok.textContent = szamol;
+    }
+
+  
+
+    function cella(cell) {
+        cell.classList.add('tünt');
+    }
+
+    function resetTable() {
+        const cells = document.querySelectorAll('td');
+        cells.forEach(cell => cell.classList.remove('tünt'));
+    }
+
+
+  
+    const bevlist = document.getElementById('bevlist');
+    const adat = document.getElementById('adat');
+
+    function katt() {
+        const ad = adat.value.trim();
+        if (ad === '') return;
+
+        const elem = document.createElement('li');
+        elem.textContent = ad;
+        elem.onclick = () => elem.remove();
+        bevlist.appendChild(elem);
+
+        adat.value = '';
+        adat.focus();
+    }
+</script>
+
+</body>
+</html>
