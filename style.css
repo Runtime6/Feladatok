@@ -1,1 +1,69 @@
-asa
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.szamlal, .lista {
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    text-align: center;
+}
+.szgomb {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.table-container, .lista{
+    width: 100%;
+    max-width: 500px;
+}
+table {
+    
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table, th, td {
+    
+    border: 3px solid #000000;
+    text-align: center;
+    padding: 10px;
+}
+td.tünt {
+    visibility: hidden;
+}
+#egy {
+    background-color: rgb(233, 12, 12); 
+}
+#ketto{
+    background-color: rgb(255, 255, 255); 
+}
+#harom{
+    background-color: rgb(245, 6, 6); 
+}
+#negy{
+    background-color: rgb(255, 255, 255); 
+}
+#ot{
+    background-color: rgb(0, 57, 243); 
+}
+#hat{
+    background-color: rgb(255, 255, 255); 
+}
+#het{
+    background-color: rgb(0, 243, 32); 
+}
+#nyolc{
+    background-color: rgb(243, 10, 10); 
+}
+#kilenc{
+    background-color: rgb(248, 0, 0); 
+}
+button {
+    padding: 10px 20px;
+}
